@@ -1,0 +1,27 @@
+<html>
+<body>
+<a id="chrome" href=""></a>
+</body>
+<script type="text/javascript">
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+//var oauthToken = getParameterByName('oauth_token');
+//var mpstatus = getParameterByName('mpstatus');
+//var paymenMethodId = getParameterByName('paymentMethodId');
+//var cardBrand = getParameterByName('cardBrand');
+//var number = getParameterByName('lastFour');
+
+var link = document.getElementById('chrome');
+link.setAttribute('href', 'intent://scan/#Intent;scheme=com.mastercard.merchant;package=com.masterpass.www.apptoweb;end');
+
+link.click();
+</script>
+</html>
+>
